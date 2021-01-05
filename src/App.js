@@ -3,7 +3,7 @@ import { renderLoop } from './render'
 import { usePainter } from './hooks/paint'
 import { useCanvas } from './hooks/canvas'
 import { useRecoilValue } from 'recoil'
-import { canvasState } from './state'
+import { appState } from './state'
 import styled from 'styled-components'
 
 import PainterControls from './components/PainterControls'
@@ -14,7 +14,7 @@ const Container = styled.div`
 `
 
 const App = () => {
-  const { canvas, data, memory } = useRecoilValue(canvasState)
+  const { canvas, data, memory } = useRecoilValue(appState)
   useCanvas()
   usePainter()
 

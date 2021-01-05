@@ -10,7 +10,11 @@ export const start = ({ canvas, data, memory }) => {
 
   const width = data.width()
   const height = data.height()
-  console.log(new Uint8Array(memory.buffer, data.pixels(), width * height * 4))
+  const pixels = new Uint8Array(
+    memory.buffer,
+    data.pixels(),
+    width * height * 4
+  )
 
   const draw = regl({
     blend: {
@@ -35,11 +39,7 @@ export const start = ({ canvas, data, memory }) => {
         regl.texture({
           width,
           height,
-          data: new Uint8Array(
-            memory.buffer,
-            data.pixels(),
-            width * height * 4
-          ),
+          data: pixels,
         }),
       resolution: ({ viewportWidth, viewportHeight }) => [
         viewportWidth,

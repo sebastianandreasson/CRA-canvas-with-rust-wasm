@@ -5,8 +5,8 @@ export const wasmState = atom({
   default: null,
 })
 
-export const canvasState = atom({
-  key: 'canvas',
+export const appState = atom({
+  key: 'app',
   default: {
     data: null,
     canvas: null,

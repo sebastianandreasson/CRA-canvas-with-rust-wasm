@@ -1,32 +1,32 @@
 import { useEffect } from 'react'
 import { useRecoilState } from 'recoil'
-import { canvasState } from '../state'
+import { appState } from '../state'
 
 export const useCanvas = () => {
-  const [state, setCanvas] = useRecoilState(canvasState)
+  const [app, setApp] = useRecoilState(appState)
 
   useEffect(() => {
-    if (!state.canvas) return
+    if (!app.canvas) return
 
     const resize = () => {
       let screen_width = window.innerWidth
       let screen_height = window.innerHeight
 
-      state.canvas.style = `width: ${screen_width}px; height: ${screen_height}px;`
+      app.canvas.style = `width: ${screen_width}px; height: ${screen_height}px;`
     }
 
     resize()
     window.addEventListener('resize', resize)
 
     return () => window.removeEventListener('resize', resize)
-  }, [state.canvas])
+  }, [app.canvas])
 
   useEffect(() => {
-    setCanvas({
-      ...state,
+    setApp({
+      ...app,
       canvas: document.getElementById('canvas'),
     })
-  }, [setCanvas])
+  }, [app, setApp])
 
-  return state.canvas
+  return app.canvas
 }

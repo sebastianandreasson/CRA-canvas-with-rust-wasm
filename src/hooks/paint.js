@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 import { useRecoilValue } from 'recoil'
-import { canvasState, painterState } from '../state'
+import { appState, painterState } from '../state'
 
 const eventDistance = (a, b) => {
   return Math.sqrt(
@@ -93,7 +93,7 @@ const paint = ({ data, canvas, painter, event }) => {
 
 export const usePainter = () => {
   const painter = useRecoilValue(painterState)
-  const { data, canvas } = useRecoilValue(canvasState)
+  const { data, canvas } = useRecoilValue(appState)
 
   const onPaint = useEffect(() => {
     if (!canvas) return
