@@ -1,0 +1,47 @@
+{
+  "name": "cra-canvas-with-rust-wasm",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+    "antd": "^4.9.4",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-input-color": "^4.0.0",
+    "react-scripts": "4.0.1",
+    "recoil": "^0.1.2",
+    "regl": "^2.0.1",
+    "styled-components": "^5.2.1",
+    "web-vitals": "^0.2.4"
+  },
+  "scripts": {
+    "start": "react-app-rewired start",
+    "build": "react-app-rewired build",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@open-wc/webpack-import-meta-loader": "^0.4.7",
+    "@wasm-tool/wasm-pack-plugin": "^1.3.1",
+    "glslify": "^7.1.1",
+    "glslify-loader": "^2.0.0",
+    "raw-loader": "^4.0.2",
+    "react-app-rewired": "^2.1.8"
+  }
+}
