@@ -22,6 +22,7 @@ export const useCanvas = () => {
   }, [app.canvas])
 
   useEffect(() => {
+    if (app.canvas) return
     setApp({
       ...app,
       canvas: document.getElementById('canvas'),
